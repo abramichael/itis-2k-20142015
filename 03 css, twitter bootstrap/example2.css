@@ -1,0 +1,20 @@
+.block {
+	float: left;
+	width: 50%;
+}
+
+.left-block {
+	color: red;
+}
+
+.right-block {
+	color: blue;
+}
+
+.left-block a {
+	color: red;
+}
+
+.right-block a {
+	color: blue;
+}

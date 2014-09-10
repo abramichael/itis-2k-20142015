@@ -1,0 +1,24 @@
+h1 {
+	color: #0000FF;
+	font-family: "Georgia";
+	font-size: 40px;
+}
+
+a {
+	color: black;
+	font-family: "Courier New";
+	text-decoration: none;
+}
+/* On link */
+a:hover {
+	color: grey;
+}
+
+ul {
+	background-color: lightblue;
+}
+
+li {
+	display: inline;
+	margin-left: 15px;
+}
