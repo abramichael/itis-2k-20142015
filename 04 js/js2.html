@@ -1,0 +1,13 @@
+<textarea id="q" cols="50" rows="10"></textarea>
+<div id="result"></div>
+
+<script type="text/javascript">
+	//qText.readOnly = true;
+	var qText = document.getElementById("q");
+	
+	qText.oninput = function() {
+		var char_number = qText.value.length;
+		document.getElementById("result").innerText = char_number;
+	}
+	
+</script>
