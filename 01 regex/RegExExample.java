@@ -5,7 +5,7 @@ public class RegExExample {
     public static void main(String[] args) {
         Pattern p = Pattern.compile("\\d+");       
         Matcher m = p.matcher("123");
-        while (m.matches()) {
+        if (m.matches()) {
             System.out.println("YEAH!");
         }
     }
