@@ -3,6 +3,7 @@ import java.io.*;
 import java.net.*;
 import java.nio.*;
 import java.nio.channels.*;
+import java.nio.channels.SelectionKey;
 import java.util.*;
 import java.sql.*;
 public class Server {
@@ -31,12 +32,10 @@ public class Server {
             if (num == 0) {
                 continue;
             }
-            Set keys = selector.selectedKeys();
+            Set<SelectionKey> keys = selector.selectedKeys();
             Iterator it = keys.iterator();
-            while (it.hasNext()) {
-                SelectionKey key = (SelectionKey) it.next();
-                if ((key.readyOps() & SelectionKey.OP_ACCEPT)
-                        == SelectionKey.OP_ACCEPT) {
+            for (SelectionKey key : keys) {
+                if ((key.isAcceptable()) {
 
                     System.out.println("acc");
                     Socket s = ss.accept();
@@ -47,8 +46,7 @@ public class Server {
 
                     sc.register(selector, SelectionKey.OP_READ);
 
-                } else if ((key.readyOps() & SelectionKey.OP_READ)
-                        == SelectionKey.OP_READ) {
+                } else if (key.isReadable()) {
 
                     SocketChannel sc = null;
 
